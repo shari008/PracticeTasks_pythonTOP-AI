@@ -22,22 +22,48 @@
 #     print(f'{n} число принадлежит диапозону [10;50]')
     
 # 3 generator paroley
-import random
-import random
-import string
+# import random
+# import random
+# import string
 
-def generate_password():
-    letters = [random.choice(string.ascii_uppercase) for _ in range(3)]
-    digits = [random.choice(string.digits) for _ in range(3)]
-    special_chars_list = "!@#$%^&*"
-    specials = [random.choice(special_chars_list) for _ in range(2)]
+# def generate_password():
+#     letters = [random.choice(string.ascii_uppercase) for _ in range(3)]
+#     digits = [random.choice(string.digits) for _ in range(3)]
+#     special_chars_list = "!@#$%^&*"
+#     specials = [random.choice(special_chars_list) for _ in range(2)]
     
-    password_list = letters + digits + specials
+#     password_list = letters + digits + specials
     
-    random.shuffle(password_list)
+#     random.shuffle(password_list)
     
-    password = "".join(password_list)
+#     password = "".join(password_list)
     
-    return password
+#     return password
 
-print(generate_password())
+# print(generate_password())
+
+
+# 4
+def analyze_text():
+    
+    text = input("Введите текст: ")
+    text_lower = text.lower()
+   
+    char_counts = {}
+    for char in text_lower:
+        if char == ' ':
+            continue
+    
+        if char in char_counts:
+            char_counts[char] += 1
+        else:
+            char_counts[char] = 1
+            
+    sorted_chars = sorted(char_counts.items(), key=lambda item: item[1], reverse=True)
+    top_3 = sorted_chars[:3]
+
+    print("\n3 самых частых символа:")
+    for char, count in top_3:
+        print(f"'{char}' — встречается {count} раз(а)")
+
+analyze_text()
