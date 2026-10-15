@@ -84,9 +84,3 @@
 # n = int(input('Введите значение N:'))
 # print(f"Простые числа до {n}: {sieve_of_eratosthenes(n)}")
 
-# 6
-n = int(input())
-s = ''
-for i in range(1,n+1):
-    s += (str(i))
-print(s, s[n-1])
